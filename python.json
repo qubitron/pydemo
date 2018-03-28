@@ -1,0 +1,35 @@
+{
+	// copy these snippets into %appdata%\code\user\snippets\python.json
+	"StackOverflow: download survey": {
+		"prefix": "sodownload",
+		"body": [
+			"import requests",
+			"data = requests.get('https://drive.google.com/uc?export=download&id=0B6ZlG_Eygdj-c1kzcmUxN05VUXM')",
+			"with open('survey2017.zip', 'wb') as file:",
+			"\tfile.write(data.content)",
+			""
+		],
+		"description": "StackOverflow Demo: download surveyss"
+	},
+	"StackOverflow: unzip survey": {
+		"prefix": "sounzip",
+		"body": [
+			"import zipfile",
+			"with zipfile.ZipFile('survey2017.zip') as zip:",
+			"\tzip.extractall('survey2017')",
+			""
+		],
+		"description": "StackOverflow Demo: unzip survey"
+	},
+	"StackOverflow: cleanup files": {
+		"prefix": "socleanup",
+		"body": [
+			"import shutil, os",
+			"shutil.move('survey2017/survey_results_public.csv', 'survey2017.csv')",
+			"shutil.rmtree('survey2017')",
+			"os.remove('survey2017.zip')",
+			""
+		],
+		"description": "StackOverflow Demo: cleanup files"
+	}
+}
