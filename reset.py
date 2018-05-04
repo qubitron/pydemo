@@ -26,3 +26,15 @@ if os.path.exists('.git'):
     shutil.rmtree('.git', onerror=remove_readonly)
 
 shell('env/scripts/python -m pip uninstall -y requests')
+
+# reset hello-stackoverflow
+os.chdir('../hello-stackoverflow')      
+
+files = os.listdir(".")
+for filename in files:
+    if filename.endswith(".csv") or filename == 'data.json':
+        os.remove(filename)
+    
+os.remove(".vscode/launch.json")
+
+shell("git stash")

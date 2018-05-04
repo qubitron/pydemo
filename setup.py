@@ -23,7 +23,7 @@ shell('env/scripts/python -m pip install -r requirements.txt')
 os.chdir('..')
 
 shell("git clone https://github.com/qubitron/stackoverflow-flask")
-os.chdir("hello-stackoverflow")
+os.chdir("stackoverflow-flask")
 venv.create("env", with_pip=True)
 shell('env/scripts/python -m pip install -r requirements.txt')
 os.chdir('..')
