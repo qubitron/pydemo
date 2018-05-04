@@ -31,5 +31,14 @@
 			""
 		],
 		"description": "StackOverflow Demo: cleanup files"
-	}
+	},
+    "StackOverflow: fix totals": {
+        "prefix": "sototal",
+        "body": [
+            "if year < 2016:",
+            "\tnotNull = languages.apply(lambda x: pd.notnull(x)).sum(axis=1)",
+            "\ttotal = notNull[notNull > 0].shape[0]"
+        ],
+        "description": "StackOverflow Demo: fix totals for surveys pre 2016"
+    }
 }

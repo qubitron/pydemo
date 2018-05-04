@@ -20,14 +20,20 @@ shell("git clone https://github.com/qubitron/hello-stackoverflow")
 os.chdir("hello-stackoverflow")
 venv.create("env", with_pip=True)
 shell('env/scripts/python -m pip install -r requirements.txt')
-
 os.chdir('..')
+
+shell("git clone https://github.com/qubitron/stackoverflow-flask")
+os.chdir("hello-stackoverflow")
+venv.create("env", with_pip=True)
+shell('env/scripts/python -m pip install -r requirements.txt')
+os.chdir('..')
+
 os.mkdir('myapp')
 os.chdir('myapp')
 venv.create("env", with_pip=True)
 shell('env/scripts/python -m pip install pylint')
-
 os.chdir('..')
+
 snippetsPath = os.getenv('APPDATA') + '/code/user/snippets'
 snippetsFile = snippetsPath + '/python.json'
 if not os.path.exists(snippetsPath):
