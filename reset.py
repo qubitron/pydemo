@@ -3,6 +3,9 @@ from subprocess import call
 import venv
 import pip
 
+import platform
+isWindows = platform.system() == "Windows"
+
 def shell(command):
     return call(command.split(' '))
 
@@ -25,7 +28,10 @@ for filename in ['stackoverflow.py', 'requirements.txt', '.gitignore', 'survey20
 if os.path.exists('.git'):
     shutil.rmtree('.git', onerror=remove_readonly)
 
-shell('env/scripts/python -m pip uninstall -y requests')
+if isWindows:
+    shell('env/scripts/python -m pip uninstall -y requests')
+else:
+    shell('env/bin/python -m pip uninstall -y requests')
 
 # reset hello-stackoverflow
 os.chdir('../hello-stackoverflow')      

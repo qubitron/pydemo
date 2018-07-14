@@ -1,6 +1,11 @@
-import os, jstyleson
-snippetsPath = os.getenv('APPDATA') + '\\Code\\User\\snippets'
-snippetsFile = snippetsPath + '\\python.json'
+import os, jstyleson, platform
+
+snippetsPath = ''
+if platform.system() == 'Windows':
+    snippetsPath = os.getenv('APPDATA') + '\\Code\\User\\snippets'
+else:
+    snippetsPath = os.path.expanduser("~/Library/Application Support/Code/User/snippets")
+snippetsFile = snippetsPath + '/python.json'
 
 result = {}
 with open(snippetsFile) as targetFile:
