@@ -45,3 +45,11 @@ if os.path.exists('.vscode/launch.json"'):
     os.remove(".vscode/launch.json")
 
 shell("git stash")
+
+# reset stackoverflow-flask
+os.chdir('../stackoverflow-flask')      
+
+if os.path.exists('.vscode/launch.json"'):
+    os.remove(".vscode/launch.json")
+
+shell("git stash")
