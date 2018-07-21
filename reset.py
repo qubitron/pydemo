@@ -41,6 +41,7 @@ for filename in files:
     if filename.endswith(".csv") or filename == 'data.json':
         os.remove(filename)
     
-os.remove(".vscode/launch.json")
+if os.path.exists('.vscode/launch.json"'):
+    os.remove(".vscode/launch.json")
 
 shell("git stash")
