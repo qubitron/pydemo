@@ -45,6 +45,7 @@ if os.path.exists('.vscode/launch.json"'):
     os.remove(".vscode/launch.json")
 
 shell("git stash")
+shell("rm -rf app")
 
 # reset stackoverflow-flask
 os.chdir('../stackoverflow-flask')      
@@ -53,3 +54,4 @@ if os.path.exists('.vscode/launch.json"'):
     os.remove(".vscode/launch.json")
 
 shell("git stash")
+shell("rm Dockerfile docker-compose.yml docker-compose.debug.yml .dockerignore")
