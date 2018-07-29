@@ -6,7 +6,6 @@ import platform
 
 isWindows = platform.system() == "Windows"
 
-
 def shell(command):
     return call(command.split(' '))
 

@@ -40,5 +40,36 @@
             "\ttotal = notNull[notNull > 0].shape[0]"
         ],
         "description": "StackOverflow Demo: fix totals for surveys pre 2016"
-    }
+	},
+	"StackOverflow: extract files": {
+		"prefix": "soextract",
+		"body": [
+			"import zipfile",
+			"with zipfile.ZipFile('survey2017.zip') as zip:",
+			"\tzip.extractall('survey2017')\n",
+			"import shutil, os",
+			"shutil.move('survey2017/survey_results_public.csv', '${0:survey2017}.csv')",
+			"shutil.rmtree('survey2017')",
+			"os.remove('survey2017.zip')",
+			""
+		],
+		"description": "StackOverflow Demo: cleanup files"
+	},
+	"todo": {
+		"prefix": "todo",
+		"body": ["# TODO $CURRENT_MONTH_NAME $CURRENT_DATE, $CURRENT_YEAR: "]
+	},
+	"Flask App": {
+		"prefix": "flaskapp",
+		"body": [
+			"from flask import Flask, render_template",
+			"app = Flask(__name__)\n",
+			"@app.route('/')",
+			"def index():",
+			"\treturn render_template('index.html')\n",
+			"if __name__ == '__main__':",
+			"\tapp.run(host='0.0.0.0', port=8000, debug=True)"
+		],
+		"description": "Basic flask app"
+	}
 }
