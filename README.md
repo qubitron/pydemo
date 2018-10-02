@@ -2,7 +2,7 @@ This repo contains code and links for the "Get Productive with Python and Visual
 
 ## Slides & Video
 - [Slides from EuroPython](https://1drv.ms/p/s!Ak85dR9Am4LtgifB8Bh9PDj1h_zX)
-- [Video from EuroPython](https://www.youtube.com/watch?v=7uSjCp1wOrw&t=2h31m) - live stream recording
+- [Video from EuroPython](https://www.youtube.com/watch?v=6YLMWU-5H9o)
 
 ## Downloads
 - [VS Code Download](https://code.visualstudio.com)
