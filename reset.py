@@ -41,14 +41,22 @@ for filename in files:
     if filename.endswith(".csv") or filename == 'data.json':
         os.remove(filename)
     
-if os.path.exists('.vscode/launch.json"'):
+if os.path.exists('.vscode/launch.json'):
     os.remove(".vscode/launch.json")
+
+if os.path.exists('.vscode/settings.json'):
+    os.remove(".vscode/settings.json")
+
+if os.path.exists('analysis.py'):
+    os.remove("analysis.py")
 
 shell("git stash")
 shell("rm -rf app")
 
 # reset stackoverflow-flask
 os.chdir('../stackoverflow-flask')      
+shell("git stash")
+shell("git checkout master")
 
 if os.path.exists('.vscode/launch.json"'):
     os.remove(".vscode/launch.json")
